@@ -18,7 +18,7 @@ async function connect(): Promise<Db> {
   return client.db(DB_NAME);
 }
 
-// same connection helper as dis9, just a different database
+// same connection as dis9
 export default async function getCollection(): Promise<Collection> {
   if (!db) {
     db = await connect();

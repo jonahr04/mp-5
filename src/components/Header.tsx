@@ -16,7 +16,6 @@ export default function Header() {
     return (
         <Head>
             <Title>URL Shortener</Title>
-            <p>make a short link</p>
         </Head>
     );
 }

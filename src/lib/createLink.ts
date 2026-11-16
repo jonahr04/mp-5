@@ -2,13 +2,11 @@
 
 import getCollection from "@/db";
 
-// returns "" if it saved, otherwise an error message
 export default async function createLink(url: string, alias: string): Promise<string> {
   if (alias.trim() === "" || alias.includes(" ") || alias.includes("/")) {
     return "alias cant have spaces or slashes";
   }
 
-  // has to be checked on the server
   let valid = false;
   try {
     const parsed = new URL(url);
@@ -23,6 +21,7 @@ export default async function createLink(url: string, alias: string): Promise<st
     return "that url is not valid";
   }
 
+  // insert in DB
   const links = await getCollection();
   const existing = await links.findOne({ alias: alias });
   if (existing) {

@@ -55,7 +55,7 @@ export default function ShortenForm() {
                             setNote(message);
                             return;
                         }
-                        // show it so they can copy and share it
+                        // so they can copy the short link
                         setMade(window.location.origin + "/r/" + alias);
                     })
                     .catch((err) => {
